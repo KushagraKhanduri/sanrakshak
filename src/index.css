@@ -1,0 +1,442 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.min-h-screen {
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  /* Light mode - primary mode */
+  :root, .light-mode {
+    --background: 0 0% 90%;
+    --foreground: 0 0% 20%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    --primary: 210 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+    
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222 47% 11%;
+    
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    
+    --radius: 0.75rem;
+
+    /* Rainbow animation colors */
+    --color-1: 166 84% 67%;
+    --color-2: 219 84% 67%;
+    --color-3: 294 84% 67%;
+    --color-4: 43 84% 67%;
+    --color-5: 358 72% 65%;
+  }
+
+  /* Dark mode */
+  .dark-mode {
+    --background: 222 47% 11%;
+    --foreground: 210 40% 98%;
+    
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+    
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+    
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 210 40% 98%;
+    
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    
+    --radius: 0.75rem;
+
+    /* Rainbow animation colors */
+    --color-1: 166 84% 67%;
+    --color-2: 219 84% 67%;
+    --color-3: 294 84% 67%;
+    --color-4: 43 84% 67%;
+    --color-5: 358 72% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    font-family: 'Inter', sans-serif;
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .resource-glass-card {
+    box-sizing: border-box;
+    background: white;
+    border: 2px solid black;
+    box-shadow: 8px 12px 30px rgba(0, 0, 0, 0.15);
+    border-radius: 17px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    font-weight: bolder;
+    color: black;
+    overflow: hidden;
+  }
+
+  .resource-glass-card > * {
+    text-rendering: optimizeLegibility;
+  }
+
+  .dark-mode .resource-glass-card {
+    background: #1e1e1e;
+    border: 2px solid white;
+    color: white;
+  }
+
+  .resource-glass-card:hover {
+    border: 1px solid black;
+    transform: scale(1.05);
+  }
+
+  .dark-mode .resource-glass-card:hover {
+    border: 1px solid white;
+  }
+
+  .resource-glass-card:active {
+    transform: scale(0.95) rotateZ(1.7deg);
+  }
+}
+
+@layer utilities {
+  /* Clean, minimal UI styles */
+  .card-minimal {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100;
+  }
+  
+  .dark-mode .card-minimal {
+    @apply bg-gray-900 border-gray-800;
+  }
+
+  .glass-minimal {
+    @apply backdrop-blur-sm bg-white/80 border border-gray-100 shadow-sm;
+  }
+  
+  .dark-mode .glass-minimal {
+    @apply backdrop-blur-sm bg-gray-900/80 border border-gray-800;
+  }
+  
+  .nav-item {
+    @apply px-4 py-2 text-gray-600 hover:text-primary transition-colors;
+  }
+  
+  .dark-mode .nav-item {
+    @apply text-gray-300 hover:text-primary;
+  }
+  
+  .nav-item-active {
+    @apply text-primary font-medium;
+  }
+  
+  .input-minimal {
+    @apply bg-white/50 border border-gray-200 rounded-full px-4 py-2 focus:outline-none focus:ring-1 focus:ring-primary focus:border-transparent;
+  }
+  
+  .dark-mode .input-minimal {
+    @apply bg-gray-800/50 border-gray-700;
+  }
+  
+  .button-primary {
+    @apply bg-primary text-white px-4 py-2 rounded-full hover:bg-primary/90 transition-colors;
+  }
+  
+  .button-secondary {
+    @apply bg-gray-100 text-gray-800 px-4 py-2 rounded-full hover:bg-gray-200 transition-colors;
+  }
+  
+  .dark-mode .button-secondary {
+    @apply bg-gray-800 text-gray-200 hover:bg-gray-700;
+  }
+  
+  .card-status {
+    @apply text-xs px-2 py-0.5 rounded-full font-medium;
+  }
+  
+  .card-status-paid {
+    @apply bg-green-100 text-green-800;
+  }
+  
+  .dark-mode .card-status-paid {
+    @apply bg-green-900/30 text-green-400;
+  }
+  
+  .card-status-pending {
+    @apply bg-yellow-100 text-yellow-800;
+  }
+  
+  .dark-mode .card-status-pending {
+    @apply bg-yellow-900/30 text-yellow-400;
+  }
+  
+  /* Original utilities - keep these */
+  .glass-morphism {
+    @apply backdrop-blur-xl bg-black/5 border border-black shadow-[0_4px_12px_-2px_rgba(0,0,0,0.05)];
+    box-shadow: 0 4px 12px -2px rgba(0,0,0,0.05), 0 0 5px 1px rgba(0,0,0,0.1);
+  }
+  
+  .glass-dark {
+    @apply backdrop-blur-lg bg-white/90 border border-black shadow-soft;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08), 0 0 5px 1px rgba(0,0,0,0.1);
+  }
+  
+  /* Dark mode styles */
+  .dark-mode .glass-morphism {
+    @apply backdrop-blur-xl bg-white/5 border border-white/10;
+    box-shadow: 0 4px 12px -2px rgba(255,255,255,0.05), 0 0 5px 1px rgba(255,255,255,0.05);
+  }
+  
+  .dark-mode .glass-dark {
+    @apply backdrop-blur-lg bg-black/30 border border-white/5;
+    box-shadow: 0 4px 15px rgba(255,255,255,0.05), 0 0 5px 1px rgba(255,255,255,0.05);
+  }
+  
+  /* Light mode styles */
+  .light-mode .glass-morphism {
+    @apply backdrop-blur-xl bg-white border border-black shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04), 0 0 5px 1px rgba(0,0,0,0.05);
+  }
+  
+  .light-mode .glass-dark {
+    @apply bg-white border border-black shadow-[0_8px_30px_rgb(0,0,0,0.04)];
+    box-shadow: 0 8px 30px rgba(0,0,0,0.04), 0 0 5px 1px rgba(0,0,0,0.05);
+  }
+  
+  .card, .neo-element {
+    @apply border border-black shadow-soft bg-white;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08), 0 0 5px 1px rgba(0,0,0,0.05);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .card:hover, .neo-element:hover {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1), 0 0 7px 2px rgba(0,0,0,0.07);
+  }
+  
+  .dark-mode .card, .dark-mode .neo-element {
+    @apply border border-white/10 bg-black;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2), 0 0 5px 1px rgba(255,255,255,0.03);
+  }
+  
+  .dark-mode .card:hover, .dark-mode .neo-element:hover {
+    box-shadow: 0 6px 25px rgba(0,0,0,0.25), 0 0 7px 2px rgba(255,255,255,0.05);
+  }
+  
+  .neo-element {
+    @apply rounded-lg p-4 shadow-[0_4px_16px_rgba(0,0,0,0.1)];
+  }
+  
+  .dark-mode .neo-element {
+    @apply shadow-[0_4px_16px_rgba(0,0,0,0.2)];
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .h-screen-dvh {
+    height: 100vh; /* Fallback */
+    height: 100dvh;
+  }
+  
+  .link-hover {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full;
+  }
+  
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black/20 focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  
+  .dark-mode .focus-ring {
+    @apply focus-visible:ring-white/20;
+  }
+  
+  /* Add shadow for light mode */
+  .shadow-soft {
+    @apply shadow-[0_4px_20px_rgba(0,0,0,0.08)];
+  }
+  
+  /* Dark mode specific styles */
+  .dark-mode {
+    @apply bg-black text-white;
+  }
+  
+  .light-mode {
+    @apply bg-white text-black;
+  }
+
+  /* Rainbow animation */
+  .animate-rainbow {
+    animation: rainbow 8s linear infinite;
+    background-size: 200% auto;
+  }
+  
+  /* Apply borders to common components, excluding buttons */
+  .dark-mode [class*="Dialog"], 
+  .dark-mode [class*="Card"],
+  .dark-mode .rounded-lg,
+  .dark-mode .rounded-xl 
+  {
+    /* @apply border border-white/10; */
+    box-shadow: 0 0 5px 1px rgba(255,255,255,0.03);
+  }
+  
+  .light-mode [class*="Dialog"], 
+  .light-mode [class*="Card"],
+  .light-mode .rounded-lg,
+  .light-mode .rounded-xl {
+    /* @apply border border-black; */
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.05);
+  }
+  
+  /* Exclude buttons from having borders */
+  button:not([class*="Card"]):not([class*="Dialog"]) {
+    @apply border-0;
+  }
+  
+  /* Specific overrides for components that should have borders */
+  .light-mode .dialog-content,
+  .light-mode .popover-content,
+  .light-mode .dropdown-content {
+    @apply border border-black;
+    box-shadow: 0 0 10px 2px rgba(0,0,0,0.05);
+  }
+  
+  /* Glass effect styles */
+  .glass-effect {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+  
+  .dark-mode .glass-effect {
+    @apply backdrop-blur-md bg-black/30 border border-white/5;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-md bg-white/80 border border-gray-200 shadow-lg;
+  }
+  
+  .dark-mode .glass-card {
+    @apply backdrop-blur-md bg-black/40 border border-gray-700 shadow-lg;
+  }
+}
+
+/* Rainbow animation keyframes */
+@keyframes rainbow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 25%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+/* Component animations */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+@for $i from 1 through 10 {
+  .stagger-item:nth-child(#{$i}) {
+    animation: staggerAnimation 0.3s ease-out forwards;
+    animation-delay: calc(#{$i} * 0.05s);
+  }
+}
+
+@keyframes staggerAnimation {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glow effect on hover for cards and elements */
+.light-mode .card:hover,
+.light-mode .neo-element:hover,
+.light-mode .rounded-lg:hover,
+.light-mode .rounded-xl:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 0 8px 2px rgba(0,0,0,0.08);
+}
+
+.dark-mode .card:hover,
+.dark-mode .neo-element:hover,
+.dark-mode .rounded-lg:hover,
+.dark-mode .rounded-xl:hover {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3), 0 0 8px 2px rgba(255,255,255,0.07);
+}
