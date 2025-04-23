@@ -1,65 +1,47 @@
-# Welcome to SANRAKSHAK
+# Sanrakshak
 
-## Project info
+[![Visit Deployed Website](https://img.shields.io/badge/Visit-Sanrakshak-blue?style=for-the-badge&logo=vercel)](https://sanrakshak.vercel.app/)
 
-**URL**: https://lovable.dev/projects/8dc57085-e936-4ffe-8dd8-08517564a541
+## Running the Project Locally
 
-## How can I edit this code?
+Follow these steps to run the project on your local machine:
 
-There are several ways of editing your application.
+### Prerequisites
+- Node.js installed (v14 or later recommended)
+- npm (comes with Node.js)
+- Git
 
-**Use Lovable**
+### Installation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/97326b94-771a-49fa-ba64-617af6aa1279) and start prompting.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/KushagraKhanduri/sanrakshak.git
+3. **Navigate to the project directory**
+   ```bash
+   npm i
+4. **After successfully installing the node modules**
+   ```bash
+   npm run dev
+5  **Follow the URL generated**
 
-Changes made via Lovable will be committed automatically to this repo.
+MIT License
 
-**Use your preferred IDE**
+Copyright (c) [year] [fullname]
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/682b874f-0f56-4a36-9158-ab058c5e1061) and click on Share -> Publish.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
